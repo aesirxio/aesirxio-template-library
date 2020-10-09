@@ -5,13 +5,6 @@
 Generate favicons using [RealFaviconGenerator](https://github.com/RealFaviconGenerator) as part of your Webpack build process.
 
 
-## Install
-
-```
-npm i --save-dev real-favicon-webpack-plugin
-```
-
-
 ## Usage
 
 In your Webpack config:

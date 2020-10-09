@@ -1,7 +1,7 @@
 {
   "name": "@redweb/real-favicon-webpack-plugin",
   "version": "1.0.0",
-  "description": "[![npm version](https://badge.fury.io/js/real-favicon-webpack-plugin.svg)](https://badge.fury.io/js/real-favicon-webpack-plugin)",
+  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
