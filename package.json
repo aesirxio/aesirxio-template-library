@@ -11,5 +11,8 @@
     "url": "git@gitlab.redweb.dk:templates/joomla/redweb-template-library.git"
   },
   "author": "redWEB",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "rfg-api": "^0.5.1"
+  }
 }
