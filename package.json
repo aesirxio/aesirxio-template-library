@@ -12,7 +12,7 @@
   },
   "author": "redWEB",
   "license": "ISC",
-  "devDependencies": {
+  "dependencies": {
     "rfg-api": "^0.5.1"
   }
 }
