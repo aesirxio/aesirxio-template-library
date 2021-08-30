@@ -1,5 +1,4 @@
 const rfg = require("rfg-api").init();
-const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 const pluginName = "RealFaviconPlugin";
 
@@ -40,6 +39,17 @@ class RealFaviconPlugin {
       };
 
       this.request = rfg.createRequest(opts);
+
+      const HtmlWebpackPlugin = compiler.options.plugins
+        .map(({ constructor }) => constructor)
+        .find(
+          /**
+           * Find only HtmlWebpkackPlugin constructors
+           * @type {(constructor: Function) => constructor is typeof import('html-webpack-plugin')}
+           */
+          (constructor) =>
+            constructor && constructor.name === "HtmlWebpackPlugin"
+        );
 
       HtmlWebpackPlugin.getHooks(compilation).beforeEmit.tapAsync(
         pluginName,
