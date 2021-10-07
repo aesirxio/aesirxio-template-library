@@ -7,6 +7,7 @@ class CriticalCssWebpackPlugin {
       {
         src: "index.html",
         target: "index.css",
+        inline: true,
         extract: true,
         width: 375,
         height: 565,
@@ -22,7 +23,7 @@ class CriticalCssWebpackPlugin {
   apply(compiler) {
     compiler.hooks.afterEmit.tapAsync(
       "CriticalCssWebpackPlugin",
-      (compilation) => {
+      (compilation, callback) => {
         for (const chunk of compilation.chunks) {
           if (chunk.id === "app") {
             let css = [];
@@ -33,45 +34,11 @@ class CriticalCssWebpackPlugin {
               }
             }
 
-            critical.generate(
-              Object.assign({ css }, this.options),
-              function (err, cb) {
-                console.log(cb.css);
+            critical.generate(Object.assign({ css }, this.options), (err) => {
+              callback(err);
+            });
 
-                const HtmlWebpackPlugin = compiler.options.plugins
-                  .map(({ constructor }) => constructor)
-                  .find(
-                    /**
-                     * Find only HtmlWebpkackPlugin constructors
-                     * @type {(constructor: Function) => constructor is typeof import('html-webpack-plugin')}
-                     */
-                    (constructor) =>
-                      constructor && constructor.name === "HtmlWebpackPlugin"
-                  );
-
-                HtmlWebpackPlugin.getHooks(compilation).beforeEmit.tapAsync(
-                  pluginName,
-                  (data, cb) => {
-                    if (data.plugin.options.realfavicons === true) {
-                      this.generateFavicons((err, res) => {
-                        if (err) return cb(err);
-
-                        data.html = data.html.replace(
-                          "</head>",
-                          res.favicon.html_code + "</head>"
-                        );
-
-                        cb(null, data);
-                      });
-                    } else {
-                      cb(null, data);
-                    }
-                  }
-                );
-              }
-            );
-
-            return;
+            return false;
           }
         }
       }
