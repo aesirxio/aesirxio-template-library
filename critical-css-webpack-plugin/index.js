@@ -25,7 +25,7 @@ class CriticalCssWebpackPlugin {
       "CriticalCssWebpackPlugin",
       (compilation, callback) => {
         for (const chunk of compilation.chunks) {
-          if (chunk.id === "app") {
+          if (chunk.name === "app") {
             let css = [];
 
             for (const file of chunk.files) {
@@ -38,7 +38,7 @@ class CriticalCssWebpackPlugin {
               callback(err);
             });
 
-            return false;
+            return true;
           }
         }
       }
