@@ -13,11 +13,12 @@
   "author": "redWEB",
   "license": "ISC",
   "dependencies": {
+    "critical": "^4.0.1",
     "html-webpack-plugin": "^5.2.0",
     "loader-utils": "^2.0.0",
-    "postcss": "^7.0.32",
+    "postcss": "^7.0.39",
     "rfg-api": "^0.5.2",
-    "webpack": "^5.21.2",
+    "webpack": "^5.57.1",
     "webpack-sources": "^2.2.0"
   }
 }
