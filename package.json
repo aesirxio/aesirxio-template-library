@@ -1,17 +1,14 @@
 {
-  "name": "redweb-template-library",
+  "name": "r-digital-template-library",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": {
-    "type": "git",
-    "url": "git@gitlab.redweb.dk:templates/joomla/redweb-template-library.git"
-  },
-  "author": "redWEB",
-  "license": "ISC",
+  "repository": "https://github.com/aesirxio/r-digital-template-library",
+  "author": "R Digital",
+  "license": "GPL-3.0-only",
   "dependencies": {
     "critical": "^4.0.1",
     "html-webpack-plugin": "^5.2.0",
