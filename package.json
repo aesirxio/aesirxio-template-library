@@ -1,13 +1,13 @@
 {
-  "name": "r-digital-template-library",
+  "name": "aesirxio-template-library",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": "https://github.com/aesirxio/r-digital-template-library",
-  "author": "R Digital",
+  "repository": "https://github.com/aesirxio/aesirxio-template-library",
+  "author": "AesirX",
   "license": "GPL-3.0-only",
   "dependencies": {
     "critical": "^4.0.1",
